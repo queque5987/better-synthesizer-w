@@ -31,6 +31,7 @@ class tacotron:
             tensor = torch.load(os.path.join(path, pt))
             checkpoint[pt[4:-3]] = tensor
         self._model.model_state_load(checkpoint)
+        self._model.eval()
 
     def generate(self, chars, speaker_embeddings):
         return self.generate(chars, speaker_embeddings)
