@@ -18,11 +18,12 @@ class UserInput(BaseModel):
 def index():
     return {"Message": "This is Index"}
 
-@app.get('/inference/')
-async def inference(userinput: UserInput):
+@app.get('/generate/')
+async def generate(userinput: UserInput):
     _model = rtvc_main.tacotron()
     userinput = userinput.dict()
     chars = userinput["chars"]
+    chars = [np.array(c)for c in chars]
     chars = np.stack(chars)
     chars = torch.tensor(chars).long().to('cpu')
 
