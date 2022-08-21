@@ -6,7 +6,7 @@ import collections
 import os
 import torch
 
-class tacotron:
+class taco:
     def __init__(self):
         self._model = tacotron.Tacotron(
             embed_dims=hparams.tts_embed_dims,
