@@ -31,10 +31,15 @@ async def generate(userinput: UserInput):
     batched_embeds = [np.array(b)for b in batched_embeds]
     speaker_embeds = np.stack(batched_embeds)
     speaker_embeddings = torch.tensor(speaker_embeds).float().to('cpu')
+    print("-----")
+    print(chars)
+    print("-----")
+    print(speaker_embeddings)
+    print("-----")
 
-    _, mel, alignments = _model.generate(chars, speaker_embeddings)
+    _, mel, _ = _model.generate(chars, speaker_embeddings)
     mel = mel.tolist()
-    alignments = alignments.tolist()
+    # alignments = alignments.tolist()
     mel = jsonable_encoder(mel)
     return JSONResponse(mel)
     #     {'mel': mel,
