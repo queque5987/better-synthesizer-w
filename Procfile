@@ -1,1 +1,1 @@
-web: gunicorn app:app --preload -b "0.0.0.0:$PORT" -k uvicorn.workers.UvicornWorker
+web: gunicorn app:app --preload --timeout=60 -b "0.0.0.0:$PORT" -k uvicorn.workers.UvicornWorker
