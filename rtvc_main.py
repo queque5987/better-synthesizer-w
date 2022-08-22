@@ -34,7 +34,7 @@ class taco:
         self._model.eval()
 
     def generate(self, chars, speaker_embeddings):
-        return self.generate(chars, speaker_embeddings)
+        return self._model.generate(chars, speaker_embeddings)
 
 # if __name__ == "__main__":
 #     embed = api_test.get_embed()
