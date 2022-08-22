@@ -28,6 +28,7 @@ async def generate(userinput: UserInput):
     chars = torch.tensor(chars).long().to('cpu')
 
     batched_embeds = userinput["batched_embeds"]
+    batched_embeds = [np.array(b)for b in batched_embeds]
     speaker_embeds = np.stack(batched_embeds)
     speaker_embeddings = torch.tensor(speaker_embeds).float().to('cpu')
 
