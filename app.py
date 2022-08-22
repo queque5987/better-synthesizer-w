@@ -34,5 +34,9 @@ async def generate(userinput: UserInput):
     _, mel, alignments = _model.generate(chars, speaker_embeddings)
     mel = mel.tolist()
     alignments = alignments.tolist()
-    rsp = jsonable_encoder((mel, alignments))
-    return JSONResponse(rsp)
+    # rsp = jsonable_encoder((mel, alignments))
+    return JSONResponse(
+        {'mel': mel,
+        'alignments': alignments
+        }
+    )
