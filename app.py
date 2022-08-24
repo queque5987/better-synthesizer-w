@@ -38,10 +38,5 @@ async def generate(userinput: UserInput):
     print(mel)
     print("--mel--")
     mel = mel.tolist()
-    # alignments = alignments.tolist()
     mel = jsonable_encoder(mel)
     return JSONResponse(mel)
-    #     {'mel': mel,
-    #     'alignments': alignments
-    #     }
-    # )
