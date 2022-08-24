@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.encoders import jsonable_encoder
 import numpy as np
 import torch
@@ -16,7 +16,7 @@ class UserInput(BaseModel):
 
 @app.get('/')
 def index():
-    return {"Message": "This is Index"}
+    return FileResponse("index.html")
 
 @app.get('/generate/')
 async def generate(userinput: UserInput):
