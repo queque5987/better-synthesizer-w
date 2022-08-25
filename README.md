@@ -27,6 +27,7 @@ https://better-synthesizer.herokuapp.com/inference/
     mel @type {list}   
 **return mel spectrogram*   
 **convert mel{list} to {tensor} to use*   
+**Entire checkpoint was splited by each parameters*   
 
 * * *
 # used libraries
@@ -89,6 +90,7 @@ https://better-synthesizer-w.herokuapp.com/inference/
     mel @type {list}   
 **멜 스펙트로그램을 반환합니다.*   
 **{list}타입의 멜 스펙트로그램을 {tensor}타입으로 변환하여 사용하여야 합니다.*   
+**모델이 사용하는 체크포인트는 각각의 파라미터에 대해서 별개의 pt파일로 분리시켜 저장하였습니다.*   
 
 * * *
 # 참고
