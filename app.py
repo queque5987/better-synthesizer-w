@@ -10,6 +10,9 @@ import rtvc_main
 
 app = FastAPI()
 
+_model = rtvc_main.taco()
+_model.load_model()
+
 class UserInput(BaseModel):
     chars: list
     batched_embeds: list
@@ -20,8 +23,6 @@ def index():
 
 @app.get('/generate/')
 async def generate(userinput: UserInput):
-    _model = rtvc_main.taco()
-    _model.load_model()
     userinput = userinput.dict()
     chars = userinput["chars"]
     chars = [np.array(c)for c in chars]
