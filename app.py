@@ -10,9 +10,6 @@ import rtvc_main
 
 app = FastAPI()
 
-_model = rtvc_main.taco()
-_model.load_model()
-
 class UserInput(BaseModel):
     chars: list
     batched_embeds: list
@@ -28,6 +25,9 @@ async def generate(userinput: UserInput):
     chars = [np.array(c)for c in chars]
     chars = np.stack(chars)
     chars = torch.tensor(chars).long().to('cpu')
+    
+    _model = rtvc_main.taco()
+    _model.load_model()
 
     batched_embeds = userinput["batched_embeds"]
     batched_embeds = [np.array(b)for b in batched_embeds]
