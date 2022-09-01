@@ -1,8 +1,12 @@
 Better-API (synthesizer-w)
 =============
-https://github.com/queque5987/better-encoder   
-https://github.com/queque5987/better-synthesizer   
-https://github.com/queque5987/better-vocoder   
+|Name               |Link                                                |input                             |output                     |
+|:------------------|:---------------------------------------------------|:---------------------------------|--------------------------:|
+|voice-cloning      |https://github.com/queque5987/better-voice-cloning  |wav/wample_rate/<br>embedding/text|speech sound               |
+|encoder            |https://github.com/queque5987/better-encoder        |wav/sample_rate                   |embedding                  |
+|synthesizer        |https://github.com/queque5987/better-synthesizer    |embedding/text                    |mel-spectrogram            |
+|synthesizer-model  |https://github.com/queque5987/better-synthesizer-w  |parameters in synthesizer         |mel-spectrogram per batch  |
+|vocoder            |https://github.com/queque5987/better-vocoder        |mel-spectrogram                   |speech sound               | 
 
 ### Better-API generates a voice that cloning user's voice from a text.
     1.encoder recieves a user voice and gives an embedding to synthesizer.
