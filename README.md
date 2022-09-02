@@ -20,9 +20,9 @@ Better-API (synthesizer-w)
 *Vocoder uses waveRNN Model*   
     
 ## available on
-https://better-synthesizer.herokuapp.com/
+https://better-synthesizer-w.herokuapp.com/
 ## to inference, send request on
-https://better-synthesizer.herokuapp.com/inference/
+https://better-synthesizer-w.herokuapp.com/generate/
 ### Request JSON
     chars @type {list}
     batched_embeds @type {list}
@@ -85,7 +85,7 @@ https://dashboard.heroku.com/
 https://better-synthesizer-w.herokuapp.com/
 
 ## 엔드포인트 링크   
-https://better-synthesizer-w.herokuapp.com/inference/
+https://better-synthesizer-w.herokuapp.com/generate/
 
 ### Request JSON
     chars @type {list}
