@@ -18,7 +18,11 @@ class UserInput(BaseModel):
 def index():
     return FileResponse("index.html")
 
-@app.get('/generate/')
+@app.get('/check')
+def check():
+    return "service available"
+
+@app.get('/generate')
 async def generate(userinput: UserInput):
     userinput = userinput.dict()
     chars = userinput["chars"]
@@ -35,9 +39,7 @@ async def generate(userinput: UserInput):
     speaker_embeddings = torch.tensor(speaker_embeds).float().to('cpu')
 
     _, mel, _ = _model.generate(chars, speaker_embeddings)
-    print("--mel--")
-    print(mel)
-    print("--mel--")
+
     mel = mel.tolist()
     mel = jsonable_encoder(mel)
     return JSONResponse(mel)
